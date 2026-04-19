@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Admin Proyek | Anisetus Portfolio</title>
-    <meta name="description" content="Panel admin untuk mengelola proyek dan gambar portfolio." />
+    <title>Panel Admin | Portofolio Anisetus</title>
+    <meta name="description" content="Panel admin untuk mengelola proyek, foto profil, dan konten portofolio." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -20,16 +20,16 @@
     <header class="site-header">
       <a class="brand" href="index.html">Anisetus.dev</a>
       <nav>
-        <a href="index.html">Lihat Portfolio</a>
+        <a href="index.html">Lihat Portofolio</a>
       </nav>
     </header>
 
     <main class="admin-main">
       <section class="section reveal">
-        <p class="eyebrow">Admin Panel</p>
+        <p class="eyebrow">Panel Admin</p>
         <h1>Kelola Proyek & Foto</h1>
         <p class="lang-id">
-          Tambahkan proyek baru, upload cover, upload beberapa foto galeri, lalu publish otomatis ke halaman portfolio.
+          Tambahkan proyek baru, unggah cover, unggah beberapa foto galeri, lalu publikasikan otomatis ke halaman portofolio.
         </p>
       </section>
 
@@ -37,9 +37,8 @@
         <article class="admin-card">
           <h2>Login Admin</h2>
           <p class="lang-id">
-            Masuk menggunakan GitHub OAuth yang tersambung ke Supabase. Tidak perlu membuat email dan password admin terpisah.
+            Ini khusus untuk admin. Hanya email yang diizinkan yang bisa masuk dan mengelola portofolio ini.
           </p>
-          <p class="mono">Catatan: hanya email admin yang diizinkan bisa mengelola data.</p>
           <button id="github-login-btn" class="btn btn-primary" type="button">Masuk dengan GitHub</button>
           <button id="logout-btn" class="btn btn-ghost" type="button" disabled>Keluar</button>
           <p id="auth-status" class="mono">Belum login</p>
@@ -55,7 +54,7 @@
             </label>
             <label>
               Ringkasan
-              <textarea id="project-summary" rows="4" required placeholder="Deskripsikan hasil, manfaat, dan peran kamu."></textarea>
+              <textarea id="project-summary" rows="4" required placeholder="Jelaskan hasil, manfaat, dan peran kamu."></textarea>
             </label>
             <label>
               Tech Stack (pisahkan dengan koma)
@@ -75,19 +74,19 @@
             </label>
             <label class="checkbox-label">
               <input type="checkbox" id="project-published" checked />
-              Publish ke portfolio
+              Publikasikan ke portofolio
             </label>
             <label>
-              Cover Proyek
+              Cover proyek
               <input type="file" id="project-cover" accept="image/*" />
             </label>
             <label>
-              Foto Galeri (bisa banyak)
+              Foto galeri (bisa banyak)
               <input type="file" id="project-gallery" accept="image/*" multiple />
             </label>
             <div class="form-actions">
-              <button type="submit" class="btn btn-primary">Simpan Proyek</button>
-              <button type="button" id="reset-form-btn" class="btn btn-ghost">Reset Form</button>
+              <button type="submit" class="btn btn-primary">Simpan proyek</button>
+              <button type="button" id="reset-form-btn" class="btn btn-ghost">Atur ulang form</button>
             </div>
           </form>
           <p id="project-form-status" class="mono"></p>
@@ -97,7 +96,7 @@
       <section class="section reveal">
         <div class="section-head">
           <h2>Pengaturan Profil & Konten</h2>
-          <button id="load-settings-btn" class="btn btn-ghost" type="button">Muat Data</button>
+          <button id="load-settings-btn" class="btn btn-ghost" type="button">Muat data</button>
         </div>
         <form id="settings-form" class="form-grid settings-form">
           <label>
@@ -125,10 +124,10 @@
             <textarea id="settings-about-text" rows="5" placeholder="Isi bagian Tentang Saya"></textarea>
           </label>
           <label>
-            Foto Profil Baru
+            Foto profil baru
             <input type="file" id="settings-profile-image" accept="image/*" />
           </label>
-          <button type="submit" class="btn btn-primary">Simpan Pengaturan Profil</button>
+          <button type="submit" class="btn btn-primary">Simpan pengaturan profil</button>
           <p id="settings-form-status" class="mono"></p>
         </form>
       </section>
@@ -136,14 +135,14 @@
       <section class="section reveal">
         <div class="section-head">
           <h2>Daftar Proyek</h2>
-          <button id="refresh-projects-btn" class="btn btn-ghost" type="button">Refresh</button>
+          <button id="refresh-projects-btn" class="btn btn-ghost" type="button">Muat ulang</button>
         </div>
         <div id="admin-project-list" class="admin-project-list"></div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <p>Admin Panel Anisetus Portfolio.</p>
+      <p>Panel Admin Portofolio Anisetus.</p>
       <p class="mono" id="admin-last-updated"></p>
     </footer>
 
